@@ -96,7 +96,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/sec_param.ko:root/lib/modules/sec_param.ko \
     device/samsung/gio/prebuilt/lzo_compress.ko:system/lib/modules/lzo_compress.ko \
     device/samsung/gio/prebuilt/lzo_decompress.ko:system/lib/modules/lzo_decompress.ko \
-    device/samsung/gio/gio.rle:root/gio.rle \
+    device/samsung/gio/GIO.rle:root/GIO.rle \
     device/samsung/gio/init.gt-s5660.rc:root/init.gt-s5660.rc \
     device/samsung/gio/prebuilt/ramzswap.ko:system/lib/modules/ramzswap.ko 
 
