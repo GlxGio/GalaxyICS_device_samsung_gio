@@ -87,8 +87,8 @@ PRODUCT_COPY_FILES += \
 
 ## Board-specific init
 PRODUCT_COPY_FILES += \
-    device/samsung/gio/ueventd.gt-s5570.rc:root/ueventd.gt-s5570.rc \
-    device/samsung/gio/init.gt-s5570.usb.rc:root/init.gt-s5570.usb.rc \
+    device/samsung/gio/ueventd.gt-s5660.rc:root/ueventd.gt-s5660.rc \
+    device/samsung/gio/init.gt-s5660.usb.rc:root/init.gt-s5660.usb.rc \
     device/samsung/gio/prebuilt/fsr.ko:root/lib/modules/fsr.ko \
     device/samsung/gio/prebuilt/fsr_stl.ko:root/lib/modules/fsr_stl.ko \
     device/samsung/gio/prebuilt/rfs_fat.ko:root/lib/modules/rfs_fat.ko \
@@ -97,7 +97,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/lzo_compress.ko:system/lib/modules/lzo_compress.ko \
     device/samsung/gio/prebuilt/lzo_decompress.ko:system/lib/modules/lzo_decompress.ko \
     device/samsung/gio/gio.rle:root/gio.rle \
-    device/samsung/gio/init.gt-s5570.rc:root/init.gt-s5570.rc \
+    device/samsung/gio/init.gt-s5660.rc:root/init.gt-s5660.rc \
     device/samsung/gio/prebuilt/ramzswap.ko:system/lib/modules/ramzswap.ko 
 
 ## wifi module
