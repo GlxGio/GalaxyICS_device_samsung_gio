@@ -8,14 +8,14 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # $(call inherit-product, vendor/google/gapps.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/tass/full_tass.mk)
+$(call inherit-product, device/samsung/gio/full_gio.mk)
 
-PRODUCT_NAME := cm_tass
+PRODUCT_NAME := cm_gio
 
 # Release name and versioning
-PRODUCT_RELEASE_NAME := GalaxyMini
+PRODUCT_RELEASE_NAME := GalaxyGio
 PRODUCT_VERSION_DEVICE_SPECIFIC :=
 -include vendor/cm/config/common_versions.mk
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := tass
+PRODUCT_DEVICE := gio

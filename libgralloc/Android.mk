@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),tass)
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),gio)
 
 LOCAL_PATH := $(call my-dir)
 

@@ -30,8 +30,8 @@ TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_RECOVERY := false
 
-TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/tass/recovery_kernel
-TARGET_RECOVERY_INITRC := device/samsung/tass/recovery.rc
+TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/gio/recovery_kernel
+TARGET_RECOVERY_INITRC := device/samsung/gio/recovery.rc
 TARGET_BOARD_PLATFORM := msm7k
 TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_CPU_ABI := armeabi-v6l
@@ -55,16 +55,16 @@ BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_GPS := true
 BOARD_USE_QCOM_PMEM := true
 BOARD_USES_QCOM_LIBRPC := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := tass
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := gio
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 
-BOARD_CUSTOM_USB_CONTROLLER := ../../device/samsung/tass/UsbController.cpp
+BOARD_CUSTOM_USB_CONTROLLER := ../../device/samsung/gio/UsbController.cpp
 
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-TARGET_BOOTLOADER_BOARD_NAME := tass
+TARGET_BOOTLOADER_BOARD_NAME := gio
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := tass,GT-S5570
+TARGET_OTA_ASSERT_DEVICE := gio,GT-S5570
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
@@ -86,7 +86,7 @@ TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 JS_ENGINE := v8
 
 # OpenGL drivers config file path
-BOARD_EGL_CFG := device/samsung/tass/prebuilt/egl.cfg
+BOARD_EGL_CFG := device/samsung/gio/prebuilt/egl.cfg
 
 # No fallback font by default (space savings)
 #NO_FALLBACK_FONT:=true
@@ -123,5 +123,5 @@ BOARD_BML_RECOVERY                 := "/dev/block/bml9"
 
 BOARD_RECOVERY_HANDLES_MOUNT       := true
 BOARD_LDPI_RECOVERY := true
-#BOARD_CUSTOM_RECOVERY_KEYMAPPING   := ../../device/samsung/tass/recovery/recovery_ui.c
-BOARD_CUSTOM_GRAPHICS              := ../../../device/samsung/tass/recovery/graphics.c
+#BOARD_CUSTOM_RECOVERY_KEYMAPPING   := ../../device/samsung/gio/recovery/recovery_ui.c
+BOARD_CUSTOM_GRAPHICS              := ../../../device/samsung/gio/recovery/graphics.c

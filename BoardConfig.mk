@@ -23,7 +23,7 @@ BOARD_USE_LEGACY_TOUCHSCREEN := true
 COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE -DMISSING_EGL_PIXEL_FORMAT_YV12 -DMISSING_GRALLOC_BUFFERS
 
 # Use the non-open-source parts, if they're present
--include vendor/samsung/tass/BoardConfigVendor.mk
+-include vendor/samsung/gio/BoardConfigVendor.mk
 
 # Use the parts that are common between all tass
-include device/samsung/tass/BoardConfigCommon.mk
+include device/samsung/gio/BoardConfigCommon.mk
