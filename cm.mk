@@ -14,7 +14,7 @@ PRODUCT_NAME := cm_gio
 
 # Release name and versioning
 PRODUCT_RELEASE_NAME := GalaxyGio
-PRODUCT_VERSION_DEVICE_SPECIFIC :=
+PRODUCT_VERSION_DEVICE_SPECIFIC := -GT-S5660
 -include vendor/cm/config/common_versions.mk
 
 ## Device identifier. This must come after all inclusions

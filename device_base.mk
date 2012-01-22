@@ -38,31 +38,26 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     librs_jni \
-    libRS \
-    hwprops \
-    rzscontrol \
-    Gallery \
     SpareParts \
     Development \
     Term \
-    prox_cal \
     make_ext4fs \
     brcm_patchram_plus \
-    gps.gio \
-    gralloc.gio \
-    copybit.gio \
+    gralloc.msm7k \
+    copybit.msm7k \
     setup_fs \
-    gralloc.gio \
+    libaudioutils \
+    libtinyalsa \
     libOmxCore \
     libOmxVidEnc \
+    libOmxVenc \
+    libOmxVdec \
     FileManager \
     screencap \
     audio.a2dp.default \
     dexpreopt \
     abtfilt \
-    hwcomposer.default \
-    Stk \
-    lzo \
+    hwcomposer.msm7k \
     zipalign \
     Superuser \
     Camera
@@ -83,12 +78,16 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/base/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/base/data/etc/platform.xml:system/etc/permissions/platform.xml \
+    frameworks/base/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
+    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 ## Board-specific init
 PRODUCT_COPY_FILES += \
     device/samsung/gio/ueventd.gt-s5660.rc:root/ueventd.gt-s5660.rc \
-    device/samsung/gio/init.gt-s5660.usb.rc:root/init.gt-s5660.usb.rc \
+    device/samsung/gio/default.prop:root/default.prop \
     device/samsung/gio/prebuilt/fsr.ko:root/lib/modules/fsr.ko \
     device/samsung/gio/prebuilt/fsr_stl.ko:root/lib/modules/fsr_stl.ko \
     device/samsung/gio/prebuilt/rfs_fat.ko:root/lib/modules/rfs_fat.ko \
@@ -204,15 +203,16 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/01sysctl:system/etc/init.d/01sysctl \
     device/samsung/gio/prebuilt/04modules:system/etc/init.d/04modules \
     device/samsung/gio/prebuilt/20userinit:system/etc/init.d/20userinit \
-    device/samsung/gio/prebuilt/99complete:system/etc/init.d/99complete \
-    device/samsung/gio/prebuilt/00banner:system/etc/init.d/00banner
+    device/samsung/gio/prebuilt/99complete:system/etc/init.d/99complete 
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.com.android.dateformat=dd-MM-yyyy \
 
 # LDPI assets
-PRODUCT_LOCALES += ldpi mdpi
+PRODUCT_LOCALES += en
+PRODUCT_AAPT_CONFIG := normal ldpi mdpi
+PRODUCT_AAPT_PREF_CONFIG := ldpi
 $(call inherit-product, build/target/product/full_base.mk)
 
 # we have enough storage space to hold precise GC data
