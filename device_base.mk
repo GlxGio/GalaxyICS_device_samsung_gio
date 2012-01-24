@@ -45,6 +45,7 @@ PRODUCT_PACKAGES += \
     brcm_patchram_plus \
     gralloc.msm7k \
     copybit.msm7k \
+    lights.gio \
     setup_fs \
     libaudioutils \
     libtinyalsa \
@@ -165,6 +166,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/qmuxd:system/bin/qmuxd \
     device/samsung/gio/prebuilt/gps.msm7k.so:system/vendor/lib/hw/gps.msm7k.so \
     device/samsung/gio/prebuilt/gps.msm7k.so:system/lib/hw/gps.msm7k.so \
+    device/samsung/gio/prebuilt/gps.gio.so:system/lib/hw/gps.gio.so \
     device/samsung/gio/prebuilt/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
     device/samsung/gio/prebuilt/sensors.default.so:system/lib/hw/sensors.default.so \
     device/samsung/gio/prebuilt/gpsd:system/vendor/bin/gpsd \
