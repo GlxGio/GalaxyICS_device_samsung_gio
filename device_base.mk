@@ -36,32 +36,11 @@ PRODUCT_COPY_FILES += \
 
 ## Live wallpaper packages
 PRODUCT_PACKAGES += \
-    LiveWallpapersPicker \
-    librs_jni \
-    SpareParts \
-    Development \
-    Term \
     make_ext4fs \
     brcm_patchram_plus \
-    gralloc.msm7k \
-    copybit.msm7k \
     lights.gio \
-    setup_fs \
-    libaudioutils \
-    libtinyalsa \
-    libOmxCore \
-    libOmxVidEnc \
-    libOmxVenc \
-    libOmxVdec \
-    FileManager \
-    screencap \
-    audio.a2dp.default \
-    dexpreopt \
-    abtfilt \
-    hwcomposer.msm7k \
-    zipalign \
-    Superuser \
-    Camera
+    bdaddr_read \
+    setup_fs 
 
 ## Vold config
 PRODUCT_COPY_FILES += \
@@ -188,10 +167,7 @@ PRODUCT_COPY_FILES += \
 
 ## other media
 PRODUCT_COPY_FILES += \
-    device/samsung/gio/prebuilt/bootanimation.zip:system/media/bootanimation.zip \
-    device/samsung/gio/prebuilt/bootsound:system/bin/bootsound \
-    device/samsung/gio/prebuilt/get_macaddrs:system/bin/get_macaddrs \
-    device/samsung/gio/prebuilt/poweron.ogg:system/media/poweron.ogg
+    device/samsung/gio/prebuilt/get_macaddrs:system/bin/get_macaddrs
 
 ## ril
 PRODUCT_COPY_FILES += \
@@ -216,6 +192,3 @@ PRODUCT_LOCALES += en
 PRODUCT_AAPT_CONFIG := normal ldpi mdpi
 PRODUCT_AAPT_PREF_CONFIG := ldpi
 $(call inherit-product, build/target/product/full_base.mk)
-
-# we have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
