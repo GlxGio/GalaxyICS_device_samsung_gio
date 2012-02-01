@@ -41,6 +41,7 @@ PRODUCT_PACKAGES += \
     copybit.gio \
     gralloc.gio \
     sensors.gio \
+    lights.gio \
     hwcomposer.msm7k \
     hwcomposer.default \
     bdaddr_read \
@@ -110,7 +111,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/audio.primary.gio.so:system/lib/hw/audio.primary.gio.so\
     device/samsung/gio/prebuilt/audio_policy.gio.so:system/lib/hw/audio_policy.gio.so\
-    device/samsung/gio/prebuilt/lights.gio.so:system/lib/hw/lights.msm7k.so\
     device/samsung/gio/prebuilt/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     device/samsung/gio/prebuilt/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/samsung/gio/prebuilt/audio_effects.conf:system/etc/audio_effects.conf \
