@@ -34,8 +34,8 @@ TARGET_NO_RADIOIMAGE := true
 
 TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/gio/recovery_kernel
 TARGET_RECOVERY_INITRC := device/samsung/gio/recovery.rc
-# TARGET_BOARD_PLATFORM := msm7x27
-TARGET_BOARD_PLATFORM := msm7k
+TARGET_BOARD_PLATFORM := msm7x27
+# TARGET_BOARD_PLATFORM := msm7k
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_CPU_ABI := armeabi-v6l
