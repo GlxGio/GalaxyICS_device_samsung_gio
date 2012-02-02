@@ -34,7 +34,8 @@ TARGET_NO_RADIOIMAGE := true
 
 TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/gio/recovery_kernel
 TARGET_RECOVERY_INITRC := device/samsung/gio/recovery.rc
-TARGET_BOARD_PLATFORM := msm7x27
+# TARGET_BOARD_PLATFORM := msm7x27
+TARGET_BOARD_PLATFORM := msm7k
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_CPU_ABI := armeabi-v6l
@@ -59,9 +60,14 @@ TARGET_OTA_ASSERT_DEVICE := gio,GT-S5660
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
+# BOARD_HAVE_FM_RADIO := true
+# BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+# BOARD_FM_DEVICE := bcm4325
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_FM_DEVICE := bcm4325
+HAS_BCM20780 := true
+BOARD_GLOBAL_CFLAGS += -DHAS_BCM20780
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := AWEXT
@@ -121,6 +127,5 @@ BOARD_BML_BOOT                     := "/dev/block/bml8"
 BOARD_BML_RECOVERY                 := "/dev/block/bml9"
 
 BOARD_RECOVERY_HANDLES_MOUNT       := true
-BOARD_LDPI_RECOVERY := true
 #BOARD_CUSTOM_RECOVERY_KEYMAPPING   := ../../device/samsung/gio/recovery/recovery_ui.c
 BOARD_CUSTOM_GRAPHICS              := ../../../device/samsung/gio/recovery/graphics.c
