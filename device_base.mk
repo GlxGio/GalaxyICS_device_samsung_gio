@@ -42,8 +42,9 @@ PRODUCT_PACKAGES += \
     gralloc.gio \
     sensors.gio \
     lights.gio \
-#    audio_policy.gio \
-#    audio.primary.gio \
+    audio.a2dp.default \
+    audio.primary.msm7x27 \
+    audio_policy.msm7x27 \
     hwcomposer.default \
     bdaddr_read \
     setup_fs 

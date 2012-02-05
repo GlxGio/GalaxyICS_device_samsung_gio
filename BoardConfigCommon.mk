@@ -21,6 +21,7 @@ LOCAL_PATH:= $(call my-dir)
 
 TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp -Os
 TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp -Os
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/gio/include
 
 # WARNING: This line must come *before* including the proprietary
 # variant, so that it gets overwritten by the parent (which goes
@@ -78,13 +79,10 @@ TARGET_PROVIDES_INIT_TARGET_RC := true
 
 # OpenGL drivers config file path
 BOARD_EGL_CFG := device/samsung/gio/prebuilt/egl.cfg
-
-# Squadzone changes for better performance, graphic and audio
 BOARD_AVOID_DRAW_TEXTURE_EXTENSION := true
-TARGET_OVERLAY_ALWAYS_DETERMINES_FORMAT := true
-TARGET_USE_SOFTWARE_AUDIO_AAC := true
-BOARD_FORCE_STATIC_A2DP := true
-
+#TARGET_OVERLAY_ALWAYS_DETERMINES_FORMAT := true
+#TARGET_USE_SOFTWARE_AUDIO_AAC := true
+#BOARD_FORCE_STATIC_A2DP := true
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 TARGET_DO_NOT_SETS_CAN_DRAW := true
 TARGET_SF_NEEDS_REAL_DIMENSIONS := true
