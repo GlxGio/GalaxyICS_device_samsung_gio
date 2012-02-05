@@ -21,7 +21,7 @@ LOCAL_PATH:= $(call my-dir)
 
 TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp -Os
 TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp -Os
-TARGET_SPECIFIC_HEADER_PATH += device/samsung/gio/include
+#TARGET_SPECIFIC_HEADER_PATH += device/samsung/gio/include
 
 # WARNING: This line must come *before* including the proprietary
 # variant, so that it gets overwritten by the parent (which goes
