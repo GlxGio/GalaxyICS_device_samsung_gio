@@ -42,10 +42,6 @@ TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_CPU_ABI := armeabi-v6l
 TARGET_CPU_ABI2 := armeabi
 
-## browser/yt fix
-JS_ENGINE := v8
-HTTP := chrome
-
 BOARD_USES_QCOM_HARDWARE := false
 BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_LIBRPC := true
