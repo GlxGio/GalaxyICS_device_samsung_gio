@@ -45,6 +45,9 @@ PRODUCT_PACKAGES += \
     audio_policy.default \
     hwcomposer.default \
     bdaddr_read \
+    DSPManager \
+    FileManager \
+    MusicFX \
     setup_fs 
 
 ## Vold config
