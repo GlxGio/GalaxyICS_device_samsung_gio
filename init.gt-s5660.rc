@@ -2,17 +2,12 @@ on init
 # insmod fsr modules
     insmod /lib/modules/fsr.ko
     insmod /lib/modules/fsr_stl.ko
-    insmod /lib/modules/rfs_glue.ko
-    insmod /lib/modules/rfs_fat.ko
     insmod /lib/modules/sec_param.ko
 
 on fs
     mount ext4 /dev/block/stl12 /system ro wait noatime nodiratime noauto_da_alloc
-    mount rfs /dev/block/stl12 /system ro check=no noatime nodiratime
     mount ext4 /dev/block/stl13 /data wait nosuid nodev noatime nodiratime noauto_da_alloc
-    mount rfs /dev/block/stl13 /data nosuid nodev check=no noatime nodiratime
     mount ext4 /dev/block/stl14 /cache wait nosuid nodev noatime nodiratime noauto_da_alloc
-    mount rfs /dev/block/stl14 /cache nosuid nodev check=no noatime nodiratime
 
     chown radio /dev/bml7
     chown radio /dev/bml10
