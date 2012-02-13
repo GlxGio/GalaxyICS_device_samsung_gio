@@ -116,9 +116,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     device/samsung/gio/prebuilt/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/samsung/gio/prebuilt/audio_effects.conf:system/etc/audio_effects.conf \
-    device/samsung/gio/prebuilt/apns-conf.xml:system/etc/apns-conf.xml \
     device/samsung/gio/prebuilt/hosts:system/etc/hosts \
-    device/samsung/gio/prebuilt/init.local.rc:system/etc/init.local.rc \
     device/samsung/gio/prebuilt/sysctl.conf:system/etc/sysctl.conf \
     device/samsung/gio/prebuilt/media_profiles.xml:system/etc/media_profiles.xml 
 
@@ -186,6 +184,7 @@ PRODUCT_COPY_FILES += \
 ## script
 PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/01sysctl:system/etc/init.d/01sysctl \
+    device/samsung/gio/prebuilt/02gio:system/etc/init.d/02gio \
     device/samsung/gio/prebuilt/04modules:system/etc/init.d/04modules \
     device/samsung/gio/prebuilt/20userinit:system/etc/init.d/20userinit \
     device/samsung/gio/prebuilt/99complete:system/etc/init.d/99complete 
