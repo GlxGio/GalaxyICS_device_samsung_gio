@@ -113,7 +113,6 @@ PRODUCT_COPY_FILES += \
 ## Media
 PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/audio.primary.gio.so:system/lib/hw/audio.primary.gio.so\
-#    device/samsung/gio/prebuilt/audio_policy.gio.so:system/lib/hw/audio_policy.gio.so\
     device/samsung/gio/prebuilt/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     device/samsung/gio/prebuilt/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/samsung/gio/prebuilt/audio_effects.conf:system/etc/audio_effects.conf \
