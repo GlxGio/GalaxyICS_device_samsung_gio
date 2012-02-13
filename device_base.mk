@@ -188,6 +188,11 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/04modules:system/etc/init.d/04modules \
     device/samsung/gio/prebuilt/20userinit:system/etc/init.d/20userinit \
     device/samsung/gio/prebuilt/99complete:system/etc/init.d/99complete 
+    
+## Prebuilt App
+PRODUCT_COPY_FILES += \
+    device/samsung/gio/prebuilt/FileManager.apk:system/app/FileManager.apk \
+    device/samsung/gio/prebuilt/UsbMassStorageToggle.apk:system/app/UsbMassStorageToggle.apk
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
