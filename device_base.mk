@@ -81,11 +81,11 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/rfs_fat.ko:root/lib/modules/rfs_fat.ko \
     device/samsung/gio/prebuilt/rfs_glue.ko:root/lib/modules/rfs_glue.ko \
     device/samsung/gio/prebuilt/sec_param.ko:root/lib/modules/sec_param.ko \
-    device/samsung/gio/prebuilt/lzo_compress.ko:system/lib/modules/lzo_compress.ko \
-    device/samsung/gio/prebuilt/lzo_decompress.ko:system/lib/modules/lzo_decompress.ko \
+    device/samsung/gio/prebuilt/cifs.ko:system/lib/modules/cifs.ko \
+    device/samsung/gio/prebuilt/tun.ko:system/lib/modules/tun.ko \
     device/samsung/gio/GIO.rle:root/GIO.rle \
     device/samsung/gio/init.gt-s5660.rc:root/init.gt-s5660.rc \
-    device/samsung/gio/prebuilt/ramzswap.ko:system/lib/modules/ramzswap.ko 
+    device/samsung/gio/prebuilt/zram.ko:system/lib/modules/zram.ko 
 
 ## wifi module
 PRODUCT_COPY_FILES += \
