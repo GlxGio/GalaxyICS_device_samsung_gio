@@ -40,7 +40,6 @@ PRODUCT_PACKAGES += \
     brcm_patchram_plus \
     copybit.gio \
     gralloc.gio \
-    sensors.gio \
     lights.gio \
     audio_policy.default \
     hwcomposer.default \
@@ -152,7 +151,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/gps.msm7k.so:system/lib/hw/gps.msm7k.so \
     device/samsung/gio/prebuilt/gps.gio.so:system/lib/hw/gps.gio.so \
     device/samsung/gio/prebuilt/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
-    device/samsung/gio/prebuilt/sensors.default.so:system/lib/hw/sensors.default.so \
+    device/samsung/gio/prebuilt/sensors.gio.so:system/lib/hw/sensors.gio.so \
     device/samsung/gio/prebuilt/gpsd:system/vendor/bin/gpsd \
     device/samsung/gio/prebuilt/memsicd:system/bin/memsicd 
 
