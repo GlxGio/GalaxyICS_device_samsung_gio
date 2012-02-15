@@ -34,7 +34,7 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-## Live wallpaper packages
+## Included Packages
 PRODUCT_PACKAGES += \
     make_ext4fs \
     brcm_patchram_plus \
