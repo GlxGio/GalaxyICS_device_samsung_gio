@@ -190,7 +190,6 @@ PRODUCT_COPY_FILES += \
     
 ## Prebuilt App
 PRODUCT_COPY_FILES += \
-    device/samsung/gio/prebuilt/FileManager.apk:system/app/FileManager.apk \
     device/samsung/gio/prebuilt/UsbMassStorageToggle.apk:system/app/UsbMassStorageToggle.apk
 
 PRODUCT_PROPERTY_OVERRIDES += \
