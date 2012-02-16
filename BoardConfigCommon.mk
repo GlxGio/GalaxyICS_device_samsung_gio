@@ -21,7 +21,7 @@ LOCAL_PATH:= $(call my-dir)
 
 TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp -Os
 TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp -Os
-TARGET_SPECIFIC_HEADER_PATH += device/samsung/gio/include
+#TARGET_SPECIFIC_HEADER_PATH += device/samsung/gio/include
 
 # WARNING: This line must come *before* including the proprietary
 # variant, so that it gets overwritten by the parent (which goes
@@ -91,6 +91,7 @@ TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 TARGET_DO_NOT_SETS_CAN_DRAW := true
 TARGET_SF_NEEDS_REAL_DIMENSIONS := true
 BOARD_NO_RGBX_8888 := true
+BOARD_USE_NASTY_PTHREAD_CREATE_HACK := true
 TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
 
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
@@ -108,12 +109,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH  := "/sys/devices/platform/usb_mass_storage/lun0
 DISABLE_DEXPREOPT := true
 BOARD_NO_PAGE_FLIPPING := true
 USE_OPENGL_RENDERER := true
-TARGET_USES_GENLOCK := true
-TARGET_USE_OVERLAY := false
-TARGET_HAVE_BYPASS := false
-TARGET_USES_C2D_COMPOSITION := false
-COMMON_GLOBAL_CFLAGS += -DEGL_TRACE
-BOARD_NO_PAGE_FLIPPING := true
 COPYBIT_MSM7K := true
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 COMMON_GLOBAL_CFLAGS += -DTARGET_MSM7x27 -DNO_RGBX_8888 #-DQCOM_HARDWARE
