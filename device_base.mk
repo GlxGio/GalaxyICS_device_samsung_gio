@@ -38,8 +38,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     make_ext4fs \
     brcm_patchram_plus \
-    copybit.gio \
-    gralloc.gio \
     lights.gio \
     audio.primary.gio \
     audio_policy.gio \
@@ -49,6 +47,17 @@ PRODUCT_PACKAGES += \
     FileManager \
     MusicFX \
     setup_fs 
+#Mike Gapinski Change
+PRODUCT_PACKAGES += \
+    	libOmxCore \
+	libOmxVidEnc \
+	libmm-omxcore \
+	libstagefrighthw \
+        libgenlock \
+	liboverlay \
+ 	libtilerenderer \
+	libQcomUI
+
 
 ## Vold config
 PRODUCT_COPY_FILES += \
@@ -119,6 +128,19 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/sysctl.conf:system/etc/sysctl.conf \
     device/samsung/gio/prebuilt/media_profiles.xml:system/etc/media_profiles.xml 
 
+## Camera
+PRODUCT_COPY_FILES += \
+    device/samsung/gio/prebuilt/camera.gio.so:system/lib/hw/camera.gio.so \
+    device/samsung/gio/prebuilt/libcamera.so:system/lib/libcamera.so \
+    device/samsung/gio/prebuilt/libcamera_client.so:system/lib/libcamera_client.so \
+    device/samsung/gio/prebuilt/libcameraservice.so:system/lib/libcameraservice.so \
+    device/samsung/gio/prebuilt/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
+    device/samsung/gio/prebuilt/libmmgsdilib.so:system/lib/libmmgsdilib.so \
+    device/samsung/gio/prebuilt/libmmipl.so:system/lib/libmmipl.so \
+    device/samsung/gio/prebuilt/libmmjpeg.so:system/lib/libmmjpeg.so \
+    device/samsung/gio/prebuilt/libmm-omxcore.so:system/lib/libmm-omxcore.so \
+    device/samsung/gio/prebuilt/liboemcamera.so:system/lib/liboemcamera.so
+
 ## keymap
 PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/qwerty.kl:system/usr/keylayout/qwerty.kl \
@@ -186,8 +208,14 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/02gio:system/etc/init.d/02gio \
     device/samsung/gio/prebuilt/04modules:system/etc/init.d/04modules \
     device/samsung/gio/prebuilt/20userinit:system/etc/init.d/20userinit \
-    device/samsung/gio/prebuilt/99complete:system/etc/init.d/99complete 
-    
+    device/samsung/gio/prebuilt/99complete:system/etc/init.d/99complete
+
+ PRODUCT_COPY_FILES += \
+	device/samsung/gio/prebuilt/gralloc.gio.so:system/lib/hw/gralloc.gio.so \
+	device/samsung/gio/prebuilt/hwcomposer.gio.so:system/lib/hw/hwcomposer.gio.so \
+
+
+
 ## Prebuilt App
 PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/UsbMassStorageToggle.apk:system/app/UsbMassStorageToggle.apk

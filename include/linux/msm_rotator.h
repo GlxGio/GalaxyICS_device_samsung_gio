@@ -1,5 +1,4 @@
-/*
- * Copyright (c) 2011, Code Aurora Forum. All rights reserved.
+/* Copyright (c) 2009, Code Aurora Forum. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -13,7 +12,7 @@
  *     * Neither the name of Code Aurora Forum, Inc. nor the names of its
  *       contributors may be used to endorse or promote products derived
  *       from this software without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -25,14 +24,57 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
  */
 
+#ifndef __MSM_ROTATOR_H__
 
+#include <linux/types.h>
+#include <linux/msm_mdp.h>
 
-#include <copybit.h>
+#define MSM_ROTATOR_IOCTL_MAGIC 'R'
 
-inline unsigned int ALIGN(unsigned int x, unsigned int align) {
-        return (x + align-1) & ~(align-1);
-}
+#define MSM_ROTATOR_IOCTL_START   \
+		_IOWR(MSM_ROTATOR_IOCTL_MAGIC, 1, struct msm_rotator_img_info)
+#define MSM_ROTATOR_IOCTL_ROTATE   \
+		_IOW(MSM_ROTATOR_IOCTL_MAGIC, 2, struct msm_rotator_data_info)
+#define MSM_ROTATOR_IOCTL_FINISH   \
+		_IOW(MSM_ROTATOR_IOCTL_MAGIC, 3, int)
 
-int convertYV12toYCrCb420SP(const copybit_image_t *src);
+enum rotator_clk_type {
+	ROTATOR_AXICLK_CLK,
+	ROTATOR_PCLK_CLK,
+	ROTATOR_IMEMCLK_CLK
+};
+
+struct msm_rotator_img_info {
+	unsigned int session_id;
+	struct msmfb_img  src;
+	struct msmfb_img  dst;
+	struct mdp_rect src_rect;
+	unsigned int    dst_x;
+	unsigned int    dst_y;
+	unsigned char   rotations;
+	int enable;
+};
+
+struct msm_rotator_data_info {
+	int session_id;
+	struct msmfb_data src;
+	struct msmfb_data dst;
+};
+
+struct msm_rot_clocks {
+	const char *clk_name;
+	enum rotator_clk_type clk_type;
+	unsigned int clk_rate;
+};
+
+struct msm_rotator_platform_data {
+	unsigned int number_of_clocks;
+	unsigned int hardware_version_number;
+	struct msm_rot_clocks *rotator_clks;
+	const char *regulator_name;
+};
+#endif
+
