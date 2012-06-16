@@ -38,13 +38,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     make_ext4fs \
     brcm_patchram_plus \
-    lights.gio \
+    gralloc.msm7x27 \
+    hwcomposer.msm7x27 \
+    audio.a2dp.default \
     audio.primary.gio \
     audio_policy.gio \
     hwcomposer.default \
     bdaddr_read \
     DSPManager \
-    FileManager \
+    GalaxyICS-FileManager \
     MusicFX \
     setup_fs 
 #Mike Gapinski Change
@@ -58,6 +60,23 @@ PRODUCT_PACKAGES += \
  	libtilerenderer \
 	libQcomUI
 
+## CM9 MDPI bootanimation
+PRODUCT_COPY_FILES += \
+    device/samsung/gio/prebuilt/bootanimation.zip:system/media/bootanimation.zip
+
+## Binaries
+PRODUCT_COPY_FILES += \
+    device/samsung/gio/prebuilt/bin/brcm_patchram_plus:system/bin/brcm_patchram_plus \
+    device/samsung/gio/prebuilt/bin/chmod:system/bin/chmod \
+    device/samsung/gio/prebuilt/bin/mount:system/bin/mount \
+    device/samsung/gio/prebuilt/bin/run_drm:system/bin/run_drm \
+    device/samsung/gio/prebuilt/bin/run_usb:system/bin/run_usb \
+    device/samsung/gio/prebuilt/bin/su:system/bin/su
+
+## Run DRM and USB mass storage
+PRODUCT_COPY_FILES += \
+    device/samsung/gio/prebuilt/etc/init.local.rc:system/etc/init.local.rc \
+    device/samsung/gio/prebuilt/etc/usb.fix:system/etc/usb.fix
 
 ## Vold config
 PRODUCT_COPY_FILES += \
@@ -92,7 +111,6 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/sec_param.ko:root/lib/modules/sec_param.ko \
     device/samsung/gio/prebuilt/cifs.ko:system/lib/modules/cifs.ko \
     device/samsung/gio/prebuilt/tun.ko:system/lib/modules/tun.ko \
-    device/samsung/gio/GIO.rle:root/GIO.rle \
     device/samsung/gio/init.gt-s5660.rc:root/init.gt-s5660.rc \
     device/samsung/gio/prebuilt/zram.ko:system/lib/modules/zram.ko 
 
@@ -169,27 +187,36 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/gpsd:system/bin/gpsd \
     device/samsung/gio/prebuilt/qmuxd:system/bin/qmuxd \
-    device/samsung/gio/prebuilt/gps.msm7k.so:system/vendor/lib/hw/gps.msm7k.so \
-    device/samsung/gio/prebuilt/gps.msm7k.so:system/lib/hw/gps.msm7k.so \
+    device/samsung/gio/prebuilt/gps.msm7x27.so:system/vendor/lib/hw/gps.msm7x27.so \
+    device/samsung/gio/prebuilt/gps.msm7x27.so:system/lib/hw/gps.msm7x27.so \
     device/samsung/gio/prebuilt/gps.gio.so:system/lib/hw/gps.gio.so \
-    device/samsung/gio/prebuilt/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+    device/samsung/gio/prebuilt/lights.default.so:system/lib/hw/lights.default.so \
     device/samsung/gio/prebuilt/sensors.gio.so:system/lib/hw/sensors.gio.so \
     device/samsung/gio/prebuilt/gpsd:system/vendor/bin/gpsd \
     device/samsung/gio/prebuilt/memsicd:system/bin/memsicd 
 
-## 3D
+## GPU firmware and libraries
 PRODUCT_COPY_FILES += \
-    device/samsung/gio/prebuilt/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
-    device/samsung/gio/prebuilt/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
-    device/samsung/gio/prebuilt/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
-    device/samsung/gio/prebuilt/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
-    device/samsung/gio/prebuilt/libgsl.so:system/lib/libgsl.so \
-    device/samsung/gio/prebuilt/egl.cfg:system/lib/egl/egl.cfg 
-
-## GPU firmware
-PRODUCT_COPY_FILES += \
-    device/samsung/gio/prebuilt/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
-    device/samsung/gio/prebuilt/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw
+    device/samsung/gio/prebuilt/qcom/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
+    device/samsung/gio/prebuilt/qcom/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
+    device/samsung/gio/prebuilt/qcom/etc/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
+    device/samsung/gio/prebuilt/qcom/etc/firmware/a225_pfp.fw:system/etc/firmware/a225_pfp.fw \
+    device/samsung/gio/prebuilt/qcom/etc/firmware/a225_pm4.fw:system/etc/firmware/a225_pm4.fw \
+    device/samsung/gio/prebuilt/qcom/etc/firmware/a300_pfp.fw:system/etc/firmware/a300_pfp.fw \
+    device/samsung/gio/prebuilt/qcom/etc/firmware/a300_pm4.fw:system/etc/firmware/a300_pm4.fw \
+    device/samsung/gio/prebuilt/qcom/etc/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
+    device/samsung/gio/prebuilt/qcom/etc/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
+    device/samsung/gio/prebuilt/qcom/lib/libC2D2.so:system/lib/libC2D2.so \
+    device/samsung/gio/prebuilt/qcom/lib/libgsl.so:system/lib/libgsl.so \
+    device/samsung/gio/prebuilt/qcom/lib/libOpenVG.so:system/lib/libOpenVG.so \
+    device/samsung/gio/prebuilt/qcom/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \
+    device/samsung/gio/prebuilt/qcom/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
+    device/samsung/gio/prebuilt/qcom/lib/egl/eglsubAndroid.so:system/lib/egl/eglsubAndroid.so \
+    device/samsung/gio/prebuilt/qcom/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
+    device/samsung/gio/prebuilt/qcom/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
+    device/samsung/gio/prebuilt/qcom/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
+    device/samsung/gio/prebuilt/qcom/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
+    device/samsung/gio/prebuilt/qcom/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so
 
 ## other media
 PRODUCT_COPY_FILES += \
@@ -210,16 +237,6 @@ PRODUCT_COPY_FILES += \
     device/samsung/gio/prebuilt/20userinit:system/etc/init.d/20userinit \
     device/samsung/gio/prebuilt/99complete:system/etc/init.d/99complete
 
- PRODUCT_COPY_FILES += \
-	device/samsung/gio/prebuilt/gralloc.gio.so:system/lib/hw/gralloc.gio.so \
-	device/samsung/gio/prebuilt/hwcomposer.gio.so:system/lib/hw/hwcomposer.gio.so \
-
-
-
-## Prebuilt App
-PRODUCT_COPY_FILES += \
-    device/samsung/gio/prebuilt/UsbMassStorageToggle.apk:system/app/UsbMassStorageToggle.apk
-
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.com.android.dateformat=dd-MM-yyyy \
@@ -230,20 +247,12 @@ PRODUCT_AAPT_CONFIG := normal ldpi mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 $(call inherit-product, build/target/product/full_base.mk)
 
-PRODUCT_PROPERTY_OVERRIDES += debug.sf.hw=1
-PRODUCT_PROPERTY_OVERRIDES += debug.composition.type=mdp
-PRODUCT_PROPERTY_OVERRIDES += debug.gr.numframebuffers=2
-
 # HardwareRenderer properties
 # dirty_regions: "false" to disable partial invalidates, override if enabletr=true
 PRODUCT_PROPERTY_OVERRIDES += \
-    hwui.render_dirty_regions=false \
-    hwui.disable_vsync=true \
-    hwui.print_config=choice \
-    debug.enabletr=false
+    hwui.render_dirty_regions=false
 
 # Misc properties
 # events_per_sec: default 90
 PRODUCT_PROPERTY_OVERRIDES += \
-    pm.sleep_mode=2 \
-    ro.telephony.call_ring.delay=2 \
+    pm.sleep_mode=1
